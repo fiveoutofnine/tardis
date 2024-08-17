@@ -22,9 +22,18 @@ cd tardis
 forge install
 ```
 
+Next, optionally install [**Huff**](https://github.com/huff-language/huff-rs) to solve the Huff puzzles:
+
+```sh
+curl -L get.huff.sh | bash
+huffup
+```
+
+If that doesn't work, refer to the [**instructions on Huff's repo**](https://github.com/huff-language/huff-rs#installation).
+
 ### Solving
 
-Each set of CTFs may require a different set-up to solve locally. Refer to and follows the instructions carefully:
+Each set of CTFs may require a different set-up to solve locally. Follow the instructions for each carefully:
 
 | Project                        | Instructions                                                                                                   |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
