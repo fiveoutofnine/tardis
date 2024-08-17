@@ -1,66 +1,29 @@
-## Foundry
+# Tardis
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A collection of past CTFs to play and practice locally from the following projects/competitions:
 
-Foundry consists of:
+- [**Curta**](https://curta.wtf) ([**repo**](https://github.com/waterfall-mkt/curta), [**𝕏**](https://x.com/curta_ctf)): a collection of fully on-chain puzzles on Ethereum and Base.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+> [!NOTE]
+> There are also plans on adding a CLI and web app to run locally to make everything more streamlined.
+> Please message **@fiveoutofnine** on Telegram if you're interested in helping!
 
 ## Usage
 
-### Build
+This project uses [**Foundry**](https://github.com/foundry-rs/foundry) as its development framework.
 
-```shell
-$ forge build
+### Installation
+
+First, make sure you have Foundry installed. Then, run the following commands to clone the repo and install its dependencies:
+
+```sh
+git clone https://github.com/fiveoutofnine/tardis.git
+cd tardis
+forge install
 ```
 
-### Test
+### Solving
 
-```shell
-$ forge test
-```
+Each set of CTFs may require a different set-up to solve locally. Refer to and follows the instructions carefully:
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+- **Curta**: [**CURTA_INSTRUCTIONS.md**](https://github.com/fiveoutofnine/tardis/blob/main/src/curta/CURTA_INSTRUCTIONS.md)
