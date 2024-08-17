@@ -6,7 +6,7 @@ A collection of past CTFs to play and practice locally from the following projec
 
 > [!NOTE]
 > There are also plans on adding a CLI and web app to run locally to make everything more streamlined.
-> Please message **@fiveoutofnine** on Telegram if you're interested in helping!
+> Please message [**@fiveoutofnine**](https://t.me/fiveoutofnine) on Telegram if you're interested in helping!
 
 ## Usage
 
@@ -26,4 +26,6 @@ forge install
 
 Each set of CTFs may require a different set-up to solve locally. Refer to and follows the instructions carefully:
 
-- **Curta**: [**CURTA_INSTRUCTIONS.md**](https://github.com/fiveoutofnine/tardis/blob/main/src/curta/CURTA_INSTRUCTIONS.md)
+| Project                        | Instructions                                                                                                   |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| [**Curta**](https://curta.wtf) | [**CURTA_INSTRUCTIONS.md**](https://github.com/fiveoutofnine/tardis/blob/main/src/curta/CURTA_INSTRUCTIONS.md) |
