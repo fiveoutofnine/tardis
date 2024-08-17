@@ -23,3 +23,6 @@ script/preview/
 
 # Mac
 .DS_STORE
+
+# Solve tests
+**/*.t.sol
