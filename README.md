@@ -35,6 +35,6 @@ If that doesn't work, refer to the [**instructions on Huff's repo**](https://git
 
 Each set of CTFs may require a different set-up to solve locally. Follow the instructions for each carefully:
 
-| Project                        | Instructions                                                                                                   |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| [**Curta**](https://curta.wtf) | [**CURTA_INSTRUCTIONS.md**](https://github.com/fiveoutofnine/tardis/blob/main/src/curta/CURTA_INSTRUCTIONS.md) |
+| Project                        | Instructions                                                                      |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| [**Curta**](https://curta.wtf) | [**Link**](https://github.com/fiveoutofnine/tardis/blob/main/src/curta/README.md) |
