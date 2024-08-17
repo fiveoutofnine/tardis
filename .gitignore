@@ -1,0 +1,25 @@
+# Compiler files
+cache/
+out/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Docs
+docs/
+
+# Dotenv file
+.env
+
+# Preview
+script/preview/
+
+# Script output files
+/output/svg/**
+/output/txt/**
+/output/wav/**
+
+# Mac
+.DS_STORE
