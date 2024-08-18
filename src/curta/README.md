@@ -16,7 +16,10 @@ import {Setup} from "./Setup.sol";
 
 contract Solution is Setup {
     function test_solve() public virtual override {
-        // SOLUTION GOES HERE.
+        // <<<<<<< SOLUTION START.
+        uint256 solution;
+        // >>>>>>> SOLUTION END.
+        curta.solve({_puzzleId: PUZZLE_ID, _solution: solution});
     }
 }
 ```
