@@ -6,7 +6,7 @@
 
 ## Solving
 
-To solve Curta puzzles locally, create a file named `Solution.t.sol` at `test/curta/{network}/{id}` and create a Foundry test contract that imports a setup contract and implements `test_solve`:
+To solve Curta puzzles locally, create a file named `Solution.t.sol` at `test/curta/{network}/{id}` and create a Foundry test contract that imports the setup contract and implement `test_solve`:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -21,10 +21,10 @@ contract Solution is Setup {
 }
 ```
 
-To automatically set up solution files for all supported puzzles, you can run the following helper script:
+To automatically set up solution files for all supported puzzles, you can run the following helper script from the root of the repo (won't overwrite anything):
 
 ```sh
-source bruh.sh
+source script/curta/setup.sh
 ```
 
 > [!NOTE]
@@ -48,7 +48,7 @@ forge test --match-path "test/curta/*"
 
 Puzzles were originally added to Curta on Ethereum at [`0x0000000006bC8D9e5e9d436217B88De704a9F307`](https://etherscan.io/address/0x0000000006bC8D9e5e9d436217B88De704a9F307).
 
-| ID  | Source                       | Solution setup                                                   | Requires forking | Solution                                        |
+| ID  | Source                       | Solution setup                                                   | Requires forking | Write-up                                        |
 | --- | ---------------------------- | ---------------------------------------------------------------- | ---------------- | ----------------------------------------------- |
 | 1   | [`src/curta/eth/1`](./eth/1) | [`test/curta/eth/1/Setup.sol`](../../test/curta/eth/1/Setup.sol) | ❌               | [Link](https://curta.wtf/puzzle/eth:1/write-up) |
 | 2   | [`src/curta/eth/2`](./eth/2) | [`test/curta/eth/2/Setup.sol`](../../test/curta/eth/2/Setup.sol) | ❌               | [Link](https://curta.wtf/puzzle/eth:2/write-up) |
