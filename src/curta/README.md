@@ -28,7 +28,7 @@ source bruh.sh
 ```
 
 > [!NOTE]
-> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](../../.gitignore)).
+> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](../../.gitignore#L28)).
 
 ### Verifying solutions
 
