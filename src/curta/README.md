@@ -64,3 +64,7 @@ Puzzles were originally added to Curta on Ethereum at [`0x0000000006bC8D9e5e9d43
 ### Base
 
 Puzzles were originally added to Curta on Base at [`0x00000000d1329c5cd5386091066d49112e590969`](https://basescan.org/address/0x00000000d1329c5cd5386091066d49112e590969).
+
+| ID  | Source                         | Solution set-up                                                    | Requires forking | Write-up                                         |
+| --- | ------------------------------ | ------------------------------------------------------------------ | ---------------- | ------------------------------------------------ |
+| 1   | [`src/curta/base/1`](./base/1) | [`test/curta/base/1/Setup.sol`](../../test/curta/base/1/Setup.sol) | ❌               | [Link](https://curta.wtf/puzzle/base:1/write-up) |
