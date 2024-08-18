@@ -26,3 +26,4 @@ script/preview/
 
 # Solutions
 test/curta/**/*.t.sol
+!test/curta/example/**

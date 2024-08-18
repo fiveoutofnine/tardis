@@ -32,7 +32,7 @@ source script/curta/setup.sh
 ```
 
 > [!NOTE]
-> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](../../.gitignore#L28)).
+> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](../../.gitignore#L28-L29)).
 
 ### Verifying solutions
 
@@ -47,6 +47,8 @@ To verify all your solutions at once, run the following command:
 ```sh
 forge test --match-path "test/curta/*"
 ```
+
+See [`test/curta/example/1/Solution.t.sol`](../../test/curta/example/1/Solution.t.sol) as an example.
 
 ### Ethereum
 
