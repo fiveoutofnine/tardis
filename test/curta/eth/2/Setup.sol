@@ -3,10 +3,10 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
-import {TwoTimesFourIsEight} from "src/curta/eth/1/TwoTimesFourIsEight.sol";
+import {F1A9} from "src/curta/eth/2/F1A9.sol";
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
-abstract contract Setup is CurtaSolution(1, 1) {
+abstract contract Setup is CurtaSolution(1, 2) {
     // -------------------------------------------------------------------------
     // Immutable storage
     // -------------------------------------------------------------------------
@@ -40,11 +40,15 @@ abstract contract Setup is CurtaSolution(1, 1) {
         super.setUp();
 
         // Deploy and label the puzzle contract.
-        puzzle = IPuzzle(new TwoTimesFourIsEight());
-        vm.label(address(puzzle), string.concat("Puzzle #1: ", puzzle.name()));
+        puzzle = IPuzzle(new F1A9());
+        vm.label(address(puzzle), string.concat("Puzzle #2: ", puzzle.name()));
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
         curta.addPuzzle(puzzle, 1);
+
+        // Roll to block and warp to timestamp the puzzle was added initially: https://etherscan.io/tx/0xab168ef25e9ae2d6bf5bfacaa9f60bbad911d888e43ea51c392d088c5b936c9d
+        vm.roll(16782325);
+        vm.warp(1678291043);
     }
 }

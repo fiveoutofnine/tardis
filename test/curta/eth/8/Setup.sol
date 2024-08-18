@@ -3,10 +3,10 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
-import {TwoTimesFourIsEight} from "src/curta/eth/1/TwoTimesFourIsEight.sol";
+import {Chal} from "src/curta/eth/8/GroovyFruitPunch.sol";
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
-abstract contract Setup is CurtaSolution(1, 1) {
+abstract contract Setup is CurtaSolution(1, 8) {
     // -------------------------------------------------------------------------
     // Immutable storage
     // -------------------------------------------------------------------------
@@ -40,8 +40,8 @@ abstract contract Setup is CurtaSolution(1, 1) {
         super.setUp();
 
         // Deploy and label the puzzle contract.
-        puzzle = IPuzzle(new TwoTimesFourIsEight());
-        vm.label(address(puzzle), string.concat("Puzzle #1: ", puzzle.name()));
+        puzzle = IPuzzle(new Chal());
+        vm.label(address(puzzle), string.concat("Puzzle #8: ", puzzle.name()));
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
