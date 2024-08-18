@@ -5,7 +5,7 @@ A collection of past CTFs to play and practice locally from the following projec
 - [**Curta**](https://curta.wtf) ([**repo**](https://github.com/waterfall-mkt/curta), [**𝕏**](https://x.com/curta_ctf)): a collection of fully on-chain puzzles on Ethereum and Base.
 
 > [!NOTE]
-> I want to add a CLI and web app to run locally to make everything more streamlined at some point.
+> I want to add more CTFs, as well as a CLI and web app that runs locally to make everything more streamlined at some point.
 > Please message [**@fiveoutofnine**](https://t.me/fiveoutofnine) on Telegram if you're interested in helping!
 
 ## Usage
