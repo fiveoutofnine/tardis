@@ -10,9 +10,11 @@ import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 import {MockPuzzle} from "curta/utils/mock/MockPuzzle.sol";
 import {LibRLP} from "curta/utils/LibRLP.sol";
 
-/// @notice A solution setup contract for Curta. In `setUp`, it deploys an
-/// instance of Curta contracts, labels addresses, and has a helper function to
-/// deploy and add mock puzzles to Curta to skip to a given puzzle ID.
+/// @notice A solution set-up contract for Curta. In `setUp`, it deploys an
+/// instance of Curta contracts, labels addresses, adds mock puzzles to Curta to
+/// skip to a given puzzle ID (note: an extra authorship token is minted to
+/// `mockAuthor` for each puzzle's set-up contract to be able to add the
+/// puzzle).
 abstract contract CurtaSolution is Test {
     // -------------------------------------------------------------------------
     // Immutable storage
@@ -27,6 +29,9 @@ abstract contract CurtaSolution is Test {
 
     /// @notice Address of the owner of the contracts.
     address internal immutable owner;
+
+    /// @notice ID of the puzzle to solve.
+    uint32 internal immutable puzzleId;
 
     // -------------------------------------------------------------------------
     // Contracts
@@ -48,21 +53,27 @@ abstract contract CurtaSolution is Test {
     // Setup
     // -------------------------------------------------------------------------
 
-    /// @notice Sets addresses, labels addresses, and sets the environment
-    /// variables.
-    constructor(uint256 _chainId) {
+    /// @notice Sets addresses, labels addresses, and sets remaining variables.
+    /// @dev Both `_chainId` and `_puzzleId` must be greater than 0.
+    /// @param _chainId ID of the environment's chain.
+    /// @param _puzzleId ID of the puzzle to solve.
+    constructor(uint256 _chainId, uint32 _puzzleId) {
+        // Require `_chainId` and `_puzzleId` to be greater than 0.
+        require(_chainId > 0 && _puzzleId > 0);
+
         // Set addresses.
         mockAuthor = makeAddr("mockAuthor");
         owner = makeAddr("owner");
         // Label addresses.
         vm.label(mockAuthor, "Mock author");
         vm.label(owner, "Owner");
-        // Set environment variables.
+        // Set variables.
         chainId = _chainId;
+        puzzleId = _puzzleId;
     }
 
     /// @notice Deploys an instance of the Curta contracts and labels them.
-    function setUp() public {
+    function setUp() public virtual {
         // Transaction #1.
         flagRenderer = new FlagRenderer();
         vm.label(address(flagRenderer), "`FlagRenderer`");
@@ -71,7 +82,8 @@ abstract contract CurtaSolution is Test {
         address curtaAddress = LibRLP.computeAddress(address(this), 3);
 
         // Transaction #2.
-        address[] memory authors = new address[](0);
+        address[] memory authors = new address[](1);
+        authors[0] = mockAuthor;
         authorshipToken = new AuthorshipToken({
             _curta: curtaAddress,
             _issueLength: 3 days,
@@ -91,30 +103,19 @@ abstract contract CurtaSolution is Test {
         authorshipToken.transferOwnership(owner);
         curta.transferOwnership(owner);
 
-        // Finally, set the environment variables in the VM.
+        // Set the environment variables in the VM.
         vm.chainId(chainId);
-    }
 
-    // -------------------------------------------------------------------------
-    // Helper Functions
-    // -------------------------------------------------------------------------
-
-    /// @notice Deploys and adds `_id - 1` instances of `mockPuzzle` as puzzles
-    /// to Curta to skip to that ID.
-    /// @param _id The ID of the puzzle to skip to.
-    function _skipToPuzzleId(uint32 _id) internal {
-        // Return early if `_id` is 0.
-        if (_id == 0) return;
-
-        // Deploy and add `_id - 1` instances of `mockPuzzle`.
+        // Finally, skip to the puzzle ID by adding `_id - 1` instances of
+        // `mockPuzzle` as `mockAuthor` to `curta`.
         unchecked {
-            uint256 count = _id - 1;
+            uint256 count = puzzleId - 1;
             for (uint256 i; i < count; ++i) {
-                // Mint an Authorship Token to the mock author.
+                // Mint an Authorship Token to `mockAuthor`.
                 vm.prank(address(curta));
                 authorshipToken.curtaMint(mockAuthor);
 
-                // Add the puzzle to Curta.
+                // Add the puzzle to Curta as `mockAuthor`.
                 vm.prank(mockAuthor);
                 curta.addPuzzle(IPuzzle(mockPuzzle), i);
             }
