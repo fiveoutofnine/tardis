@@ -5,7 +5,7 @@ A collection of past CTFs to play and practice locally from the following projec
 - [**Curta**](https://curta.wtf) ([**repo**](https://github.com/waterfall-mkt/curta), [**𝕏**](https://x.com/curta_ctf)): a collection of fully on-chain puzzles on Ethereum and Base.
 
 > [!NOTE]
-> I want to add more CTFs, as well as a CLI and web app that runs locally to make everything more streamlined at some point.
+> I want to eventually add more CTFs, as well as a CLI and web app that runs locally to make everything more streamlined at some point.
 > Please message [**@fiveoutofnine**](https://t.me/fiveoutofnine) on Telegram if you're interested in helping!
 
 ## Usage
@@ -30,6 +30,14 @@ huffup
 ```
 
 If that doesn't work, refer to the [**instructions on Huff's repo**](https://github.com/huff-language/huff-rs#installation).
+
+### Updating
+
+The project is designed to ignore players' solution files/work, so to update the challenges, simply pull from the repo:
+
+```sh
+git pull
+```
 
 ### Solving
 
