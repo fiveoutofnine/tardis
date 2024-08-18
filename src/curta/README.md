@@ -51,7 +51,7 @@ To verify all your solutions at once, run the following command:
 forge test --match-path "test/curta/*"
 ```
 
-To verify solutions that require forking, create a file named `.env` at the root of the project and copy the contents of [`.env.example`](../../.env.sample). After you've filled out the variables, add the `-f $NETWORK` option to the verification command.
+To verify solutions that require forking, create a file named `.env` at the root of the project and copy the contents of [`.env.sample`](../../.env.sample). After you've filled out the variables, add the `-f $NETWORK` option to the verification command.
 
 ### Ethereum
 
