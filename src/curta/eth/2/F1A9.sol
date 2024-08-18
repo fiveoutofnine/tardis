@@ -19,10 +19,7 @@ contract F1A9 is IPuzzle {
     }
 
     /// @inheritdoc IPuzzle
-    function verify(
-        uint256 _start,
-        uint256 _solution
-    ) external view returns (bool) {
+    function verify(uint256 _start, uint256 _solution) external returns (bool) {
         uint256 prefix = block.timestamp < 1678446000
             ? (0xF1A9 << 16) | _start
             : 0;

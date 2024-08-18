@@ -38,7 +38,7 @@ contract Throne is IPuzzle {
         thrones[throne] = true;
     }
 
-    function generate(address seed) external pure returns (uint256) {
+    function generate(address seed) external view returns (uint256) {
         return uint256(uint160(seed));
     }
 
