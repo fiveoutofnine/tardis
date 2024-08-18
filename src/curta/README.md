@@ -2,7 +2,7 @@
 
 [**Website**](https://curta.wtf) - [**Docs**](https://curta.wtf/docs) - [**𝕏**](https://x.com/curta_ctf)
 
-[**Curta Puzzles**](https://curta.wtf/docs/puzzles/overview) is CTF protocol, where players create and solve EVM puzzles to earn NFTs. Find instructions on how to solve past puzzles here.
+[**Curta Puzzles**](https://curta.wtf/docs/puzzles/overview) is CTF protocol, where players create and solve EVM puzzles to earn NFTs.
 
 ## Solving
 
