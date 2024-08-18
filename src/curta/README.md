@@ -51,6 +51,8 @@ To verify all your solutions at once, run the following command:
 forge test --match-path "test/curta/*"
 ```
 
+To verify solutions that require forking, create a file named `.env` at the root of the project and copy the contents of [`.env.example`](../../.env.sample). After you've filled out the variables, add the `-f $NETWORK` option to the verification command.
+
 ### Ethereum
 
 Puzzles were originally added to Curta on Ethereum at [`0x0000000006bC8D9e5e9d436217B88De704a9F307`](https://etherscan.io/address/0x0000000006bC8D9e5e9d436217B88De704a9F307).
