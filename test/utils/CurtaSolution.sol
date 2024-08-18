@@ -14,7 +14,7 @@ import {LibRLP} from "curta/utils/LibRLP.sol";
 /// of `AuthorshipToken` and `Curta`. Additionally, it funds 2 addresses
 /// `0xBEEF` and `0xC0FFEE` with 1000 ether each for testing. It also contains a
 /// few commonly used helper functions.
-contract CurtaSolution is Test {
+abstract contract CurtaSolution is Test {
     // -------------------------------------------------------------------------
     // Constants
     // -------------------------------------------------------------------------
@@ -116,4 +116,10 @@ contract CurtaSolution is Test {
         curta.solve(_puzzleId, solution);
         vm.stopPrank();
     }
+
+    // -------------------------------------------------------------------------
+    // Interface
+    // -------------------------------------------------------------------------
+
+    function test_solve() public virtual;
 }

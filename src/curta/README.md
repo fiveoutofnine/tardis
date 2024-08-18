@@ -15,7 +15,7 @@ pragma solidity ^0.8.26;
 import {Setup} from "./Setup.sol";
 
 contract Solution is Setup {
-    function test_solve() public {
+    function test_solve() public virtual override {
         // SOLUTION GOES HERE.
     }
 }
