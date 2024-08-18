@@ -21,7 +21,7 @@ contract Solution is Setup {
 }
 ```
 
-To automatically set up solution files for all supported puzzles, you can run the following helper script from the root of the repo (won't overwrite anything):
+To set up solution files for all supported puzzles, you can run the following helper script from the root of the repo (won't overwrite anything):
 
 ```sh
 source script/curta/setup.sh
