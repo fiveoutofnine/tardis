@@ -1,66 +1,48 @@
-## Foundry
+# Tardis
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A collection of past CTFs to play and practice locally from the following projects/competitions:
 
-Foundry consists of:
+- [**Curta**](https://curta.wtf) ([**repo**](https://github.com/waterfall-mkt/curta), [**𝕏**](https://x.com/curta_ctf)): a collection of fully on-chain puzzles on Ethereum and Base.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
+> [!NOTE]
+> I want to eventually add more CTFs, as well as a CLI and web app that runs locally to make everything more streamlined at some point.
+> Please message [**@fiveoutofnine**](https://t.me/fiveoutofnine) on Telegram if you're interested in helping!
 
 ## Usage
 
-### Build
+This project uses [**Foundry**](https://github.com/foundry-rs/foundry) as its development framework.
 
-```shell
-$ forge build
+### Installation
+
+First, make sure you have Foundry installed. Then, run the following commands to clone the repo and install its dependencies:
+
+```sh
+git clone https://github.com/fiveoutofnine/tardis.git
+cd tardis
+forge install
 ```
 
-### Test
+Next, optionally install [**Huff**](https://github.com/huff-language/huff-rs) to solve the Huff puzzles:
 
-```shell
-$ forge test
+```sh
+curl -L get.huff.sh | bash
+huffup
 ```
 
-### Format
+If that doesn't work, refer to the [**instructions on Huff's repo**](https://github.com/huff-language/huff-rs#installation).
 
-```shell
-$ forge fmt
+### Updating
+
+The project is designed to ignore players' solution files, so to update challenges, simply pull from the repo:
+
+```sh
+git pull
 ```
 
-### Gas Snapshots
+### Solving
 
-```shell
-$ forge snapshot
-```
+Each set of CTFs may require a different set-up to solve locally. Follow the instructions for each carefully:
 
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+| Project                        | Instructions                      |
+| ------------------------------ | --------------------------------- |
+| [**Curta**](https://curta.wtf) | [**Link**](./src/curta/README.md) |

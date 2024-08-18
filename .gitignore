@@ -23,3 +23,7 @@ script/preview/
 
 # Mac
 .DS_STORE
+
+# Solutions
+test/curta/**/*.t.sol
+!test/curta/example/**
