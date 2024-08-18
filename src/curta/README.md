@@ -48,7 +48,8 @@ To verify all your solutions at once, run the following command:
 forge test --match-path "test/curta/*"
 ```
 
-See [`test/curta/example/1/Solution.t.sol`](../../test/curta/example/1/Solution.t.sol) as an example.
+> [!TIP]
+> See [`test/curta/example/1/Solution.t.sol`](../../test/curta/example/1/Solution.t.sol) as an example.
 
 ### Ethereum
 
