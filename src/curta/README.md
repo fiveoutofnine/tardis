@@ -21,14 +21,14 @@ contract Solution is Setup {
 }
 ```
 
-To automatically set it up for all supported puzzles, you can run the following helper script:
+To automatically set up solution files for all supported puzzles, you can run the following helper script:
 
 ```sh
 source bruh.sh
 ```
 
 > [!NOTE]
-> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](.gitignore)).
+> The solution file doesn't have to be named `Solution.t.sol`&mdash;all test files named `*.t.sol` inside `test/curta` are ignored by Git (see [`.gitignore`](../../.gitignore)).
 
 ### Verifying solutions
 
