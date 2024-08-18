@@ -23,12 +23,13 @@ pragma solidity ^0.8.26;
 import {Setup} from "./Setup.sol";
 
 /// @dev View the puzzle's source at \`src/curta/$network/$id\`.
-contract Solution is Setup {
+contract Solution is Setup(REPLACE_WITH_YOUR_ADDRESS) {
     function test_solve() public virtual override {
         // <<<<<<< SOLUTION START.
         uint256 solution;
         // >>>>>>> SOLUTION END.
-        curta.solve({_puzzleId: $id, _solution: solution});
+        vm.prank(solver);
+        curta.solve({_puzzleId: puzzleId, _solution: solution});
     }
 }
 EOF

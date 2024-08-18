@@ -17,6 +17,13 @@ import {LibRLP} from "curta/utils/LibRLP.sol";
 /// puzzle).
 abstract contract CurtaSolution is Test {
     // -------------------------------------------------------------------------
+    // Errors
+    // -------------------------------------------------------------------------
+
+    /// @notice Emitted when the solver's address is invalid.
+    error InvalidSolverAddress();
+
+    // -------------------------------------------------------------------------
     // Immutable storage
     // -------------------------------------------------------------------------
 
@@ -119,6 +126,29 @@ abstract contract CurtaSolution is Test {
                 vm.prank(mockAuthor);
                 curta.addPuzzle(IPuzzle(mockPuzzle), i);
             }
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // Helper functions
+    // -------------------------------------------------------------------------
+
+    /// @notice Validates if some address is a valid solver: i.e., not the zero
+    /// address, a precompile, the `owner`, the `mockAuthor`, or equal to any of
+    /// the contracts'.
+    /// @param _solver Address to validate.
+    function _validateSolver(address _solver) internal view {
+        // Validate `_solver`.
+        if (
+            uint160(_solver) <= 0x10 ||
+            _solver == owner ||
+            _solver == mockAuthor ||
+            _solver == address(authorshipToken) ||
+            _solver == address(curta) ||
+            _solver == address(flagRenderer) ||
+            _solver == address(mockPuzzle)
+        ) {
+            revert InvalidSolverAddress();
         }
     }
 

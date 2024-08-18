@@ -6,7 +6,7 @@
 
 ## Solving
 
-To solve locally, create a file named `Solution.t.sol` at `test/curta/{network}/{id}` and create a Foundry test contract that imports the set-up contract and implement `test_solve`:
+To solve locally, create a file named `Solution.t.sol` at `test/curta/{network}/{id}` and create a Foundry test contract that imports the set-up contract and implement `test_solve`. Make sure to replace `REPLACE_WITH_YOUR_ADDRESS` with your address:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -14,12 +14,13 @@ pragma solidity ^0.8.26;
 
 import {Setup} from "./Setup.sol";
 
-contract Solution is Setup {
+contract Solution is Setup(REPLACE_WITH_YOUR_ADDRESS) {
     function test_solve() public virtual override {
         // <<<<<<< SOLUTION START.
         uint256 solution;
         // >>>>>>> SOLUTION END.
-        curta.solve({_puzzleId: PUZZLE_ID, _solution: solution});
+        vm.prank(solver);
+        curta.solve({_puzzleId: puzzleId, _solution: solution});
     }
 }
 ```
