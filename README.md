@@ -33,7 +33,7 @@ If that doesn't work, refer to the [**instructions on Huff's repo**](https://git
 
 ### Updating
 
-The project is designed to ignore players' solution files/work, so to update the challenges, simply pull from the repo:
+The project is designed to ignore players' solution files/work, so to update challenges, simply pull from the repo:
 
 ```sh
 git pull
