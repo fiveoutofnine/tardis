@@ -45,6 +45,6 @@ abstract contract Setup is CurtaSolution(1, 8) {
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
-        curta.addPuzzle(puzzle, 1);
+        curta.addPuzzle(puzzle, 8);
     }
 }

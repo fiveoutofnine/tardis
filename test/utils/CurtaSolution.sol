@@ -116,8 +116,7 @@ abstract contract CurtaSolution is Test {
         // Finally, skip to the puzzle ID by adding `_id - 1` instances of
         // `mockPuzzle` as `mockAuthor` to `curta`.
         unchecked {
-            uint256 count = puzzleId - 1;
-            for (uint256 i; i < count; ++i) {
+            for (uint256 i = 1; i < puzzleId; ++i) {
                 // Mint an Authorship Token to `mockAuthor`.
                 vm.prank(address(curta));
                 authorshipToken.curtaMint(mockAuthor);

@@ -45,7 +45,7 @@ abstract contract Setup is CurtaSolution(1, 2) {
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
-        curta.addPuzzle(puzzle, 1);
+        curta.addPuzzle(puzzle, 2);
 
         // Roll to block and warp to timestamp the puzzle was added initially: https://etherscan.io/tx/0xab168ef25e9ae2d6bf5bfacaa9f60bbad911d888e43ea51c392d088c5b936c9d
         vm.roll(16782325);
