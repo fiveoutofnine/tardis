@@ -53,7 +53,7 @@ forge test --match-path "test/curta/*"
 
 To verify solutions that require forking, create a file named `.env` at the root of the project and copy the contents of [`.env.sample`](../../.env.sample). After you've filled out the variables, add the `-f $NETWORK` option to the verification command.
 
-> [!INFO]
+> [!NOTE]
 > Huff puzzles require the options `--evm-version="shanghai" --ffi` to be set.
 
 ### Ethereum
