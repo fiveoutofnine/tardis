@@ -1,0 +1,297 @@
+/// @title Antikythera
+/// @author @vex_0x
+/// @dev My damn Antikythera's busted again.
+
+#include "./lib/Shuffling.huff"
+
+////////////////////////////////////////////////////////////////
+//                         INTERFACE                          //
+////////////////////////////////////////////////////////////////
+
+/// @notice Returns the name of the puzzle
+#define function name() view returns (string memory)
+/// @notice Verifies that a solution is valid for the puzzle
+#define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
+/// @notice Generates the puzzle's starting position based on a seed.
+#define function generate(address _seed) view returns (uint256)
+
+/// ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢿⣿⣿⣿⣿⣟⠋⣿⣿⣿⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣷⣤⣿⣿⣿⣿⣿⣿⣿⣭⣁⠀⠀⣨⣭⣿⣿⣿⣿⣿⣿⣿⡟⠛⣿⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣆⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⡿⠿⠟⠉⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⣿⣆⠀⢀⣨⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠈⠻⣿⣿⣿⣿⡋⠀⢿⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⣶⣿⣿⣿⣿⣿⣿⣿⣿⣤⣄⡀⠀⠀⢀⣤⣼⣿⣿⣷⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⡟⢻⣿⣿⣿⣿⣿⣿⠿⠿⣿⣿⣿⣿⣆⢠⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⣷⣾⣿⣿⣿⣿⣿⣿⣄⣰⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⠏⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⣿⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠟⠛⠁⠀⢹⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⡿⠀⠀⠈⠉⢉⣿⣿⣿⡿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠙⠿⣿⣿⣿
+/// ⣿⣿⣿⣿⡟⠁⠀⠀⠀⢠⣿⣿⣿⠀⠀⢿⣿⣿⣿⣿⣿⡆⠀⣠⣴⣶⣿⣷⣿⣿
+/// ⣿⣿⣿⣿⣿⣿⣿⣿⣦⣼⣿⣿⣿⣾⣿⣷⣿⣿⣿⣿⣿⣇⣾⣿⣿⡏⢹⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡋⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+/// ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+
+#define jumptable__packed TABLE = {
+    name generate verify
+}
+
+// - start here
+//            |
+//            v
+#define macro MAIN() = takes (0) returns (0) {
+    __tablestart(TABLE)
+    push0 calldataload 0xfc shr
+    dup1 0x04 lt
+    fail jumpi
+    add
+    0x02 swap1
+    0x1E
+    codecopy
+    push0 mload jump
+
+    name:
+        NAME()
+    generate:
+        0x04 calldataload
+        GENERATE()
+    verify:
+        ANTIKYTHERA(ret_false)
+    fail:
+        push0 push0 revert
+    ret_false:
+        push0 push0 mstore
+        0x20 push0 return
+}
+
+///       wWWWw               wWWWw
+/// vVVVv (___) wWWWw         (___)  vVVVv
+/// (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
+///  ~Y~   \|    ~Y~   (___)    |/    ~Y~
+///  \|   \ |/   \| /  \~Y~/   \|    \ |/
+/// \\|// \\|// \\|/// \\|//  \\|// \\\|///
+/// ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+/// @notice Returns the name of the puzzle
+#define macro NAME() = takes (0) returns (0) {
+    0x0B416E74696B797468657261 // ["Antikythera"]
+    0x2B mstore                // []
+    0x20 push0 mstore           // []
+    msize push0 return          //<-
+}
+
+///   _____
+///  |A .  | _____
+///  | /.\ ||A ^  | _____
+///  |(_._)|| / \ ||A _  | _____
+///  |  |  || \ / || ( ) ||A_ _ |
+///  |____V||  .  ||(_'_)||( v )|
+///         |____V||  |  || \ / |
+///                |____V||  .  |
+///                       |____V|
+
+/// @notice Generates the puzzle's starting position based on a seed.
+/// @dev The seed is intended to be `msg.sender` of some wrapper function or
+/// call.
+/// @param _seed The seed to use to generate the puzzle.
+/// @return The puzzle's starting position.
+#define macro GENERATE() = takes (1) returns (0) {
+    // Input:            [_seed]
+
+    push0 mstore      // []
+    gas 0x20 mstore   // []
+    msize push0 sha3  // [_start]
+    push0 mstore      // []
+    0x20 push0 return //<-
+}
+
+/// `-:-.   ,-;"`-:-.   ,-;"`-:-.   ,-;"`-:-.   ,-;"
+///    `=`,'=/     `=`,'=/     `=`,'=/     `=`,'=/
+///      y==/        y==/        y==/        y==/
+///    ,=,-<=`.    ,=,-<=`.    ,=,-<=`.    ,=,-<=`.
+/// ,-'-'   `-=_,-'-'   `-=_,-'-'   `-=_,-'-'   `-=_
+
+#define macro ANTIKYTHERA(ret_false) = takes (0) returns (0) {
+    0x04 calldataload
+    0x24 calldataload
+    
+    // ----------------------------
+    // PHASE 1: Dirty Bits
+    // ----------------------------
+
+    dup1 0x10 byte
+    dup1
+    dup4 0x12 byte
+    and
+    iszero <ret_false> jumpi
+
+    0x0F and
+    pc 0x04 shr eq
+    iszero <ret_false> jumpi
+    
+    // ----------------------------
+    // PHASE 2: Crank
+    // ----------------------------
+
+    dup1 0x80 shr 0x80 shl
+    CRANK(<ret_false>)
+
+    // ----------------------------
+    // PHASE 3: Truffle Shuffle
+    // ----------------------------
+
+    dup2 push0 mstore
+    dup1 0x1E byte
+    0x05 push0 dup5
+    MECHS__ONE_WAY_SHUFFLE(push0, 0x20)
+    pop
+
+    push0 mload
+    0x0F and 0x0F eq
+    iszero <ret_false> jumpi
+    
+    // ----------------------------
+    // PHASE 4: Budget Cuts
+    // ----------------------------
+
+    dup1 0x10 byte
+    0x04 shr
+    dup1 0x02 gt
+    <ret_false> jumpi
+    gas mod
+    <ret_false> jumpi
+
+    // ----------------------------
+    // PHASE 5: >_ sudo su
+    // ----------------------------
+
+    dup1 0x0a byte
+    0x05 shl
+    0x14 add
+    mload
+    0xFF eq
+    iszero <ret_false> jumpi
+
+    // ----------------------------
+    // PHASE 6: 31303532
+    // ----------------------------
+
+    dup1 0xFFFF 0x58 shl and
+    0x58 shr
+    extcodehash
+    dup2 0x17 byte
+    shl
+    0xFFFFF and
+    0x80000 eq
+    iszero <ret_false> jumpi
+
+    // ----------------------------
+    // Finish Line
+    // ----------------------------
+
+    dup1 0x1F byte
+    push0 mstore
+    0x20 push0 return
+}
+
+///                 __
+///                / _\ #
+///                \c /  #
+///                / \___ #
+///                \`----`#==>  
+///                |  \  #
+///     ,%.-"""---'`--'\#_
+///    %%/             |__`\
+///   .%'\     |   \   /  //
+///   ,%' >   .'----\ |  [/
+///      < <<`       ||
+///       `\\\       ||
+///         )\\      )\
+/// ^^^^^^^^"""^^^^^^""^^^^^^^^^^
+
+#define jumptable__packed GEARS {
+    pinion lead sun lever ring
+}
+
+#define macro CRANK(ret_false) = takes (3) returns (0) {
+    push0
+    turn:
+        __tablestart(GEARS)
+        dup3 push0 byte
+        dup1 0xFF eq snaggletooth jumpi
+        dup1 0x04 lt <ret_false> jumpi
+
+        chainid shl
+        add
+        0x02 swap1
+        0x1E
+        codecopy
+        swap1
+        push0 mload jump
+        EPICYCLICAL_GEARING()
+        turn jump
+    snaggletooth:
+        pop pop
+        dup4 0xFFFFFF and eq iszero
+        <ret_false> jumpi
+        pop
+}
+
+/// @dev Don't fix what ain't broke.
+#define macro EPICYCLICAL_GEARING() = takes (1) returns (2) {
+    pinion:
+        dup1 0x03 byte dup2 0x02 byte
+        dup3 chainid byte mul div
+ 
+        swap1
+        0x20 shl
+        swap1
+
+        planet jump
+    lead:
+        //      \_______/
+        //  `.,-'\_____/`-.,'
+        //   /`..'\ _ /`.,'\
+        //  /  /`.,' `.,'\  \
+        // /__/__/     \__\__\__   / _ \
+        // \  \  \     /  /  /   \_\(_)/_/
+        //  \  \,'`._,'`./  /     _//o\\_
+        //   \,'`./___\,'`./       /   \
+        //  ,'`-./_____\,-'`.
+        //      /       \
+        //
+
+        dup1 chainid byte dup2 0x02 byte and
+
+        swap1 0x18 shl
+        swap1
+
+        planet jump
+    sun:
+        dup1 chainid byte
+        dup2 0x02 byte shr
+
+        swap1 0x18 shl
+        swap1
+
+        planet jump
+    lever:
+        dup1 chainid byte dup2 0x02 byte
+        shl
+
+        swap1 0x18 shl
+        swap1
+
+        planet jump
+    ring:
+        dup1 chainid byte dup1 dup3 0x02 byte
+        swap1
+        chainid swap1 sub add
+
+        swap1 0x05 shl 0x14 add
+        0xFF swap1 mstore
+
+        swap1
+        0x18 shl swap1
+    planet:
+        swap1 swap2 add
+}

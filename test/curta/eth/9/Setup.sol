@@ -2,11 +2,11 @@
 pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
+import {HuffDeployer} from "foundry-huff/HuffDeployer.sol";
 
-import {Chess} from "src/curta/eth/10/LastOneStanding.sol";
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
-abstract contract Setup is CurtaSolution(1, 8) {
+abstract contract Setup is CurtaSolution(1, 9) {
     // -------------------------------------------------------------------------
     // Immutable storage
     // -------------------------------------------------------------------------
@@ -40,11 +40,11 @@ abstract contract Setup is CurtaSolution(1, 8) {
         super.setUp();
 
         // Deploy and label the puzzle contract.
-        puzzle = IPuzzle(new Chess());
-        vm.label(address(puzzle), string.concat("Puzzle #10: ", puzzle.name()));
+        puzzle = IPuzzle(HuffDeployer.deploy("curta/eth/9/Antikythera"));
+        vm.label(address(puzzle), string.concat("Puzzle #9: ", puzzle.name()));
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
-        curta.addPuzzle(puzzle, 10);
+        curta.addPuzzle(puzzle, 9);
     }
 }
