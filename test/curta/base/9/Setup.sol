@@ -3,10 +3,11 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
-import {Chess} from "src/curta/eth/10/LastOneStanding.sol";
+import {NumberHeist} from "src/curta/base/9/NumberHeist.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
-abstract contract Setup is CurtaSolution(1, 10) {
+abstract contract Setup is CurtaSolution(8453, 9) {
     // -------------------------------------------------------------------------
     // Immutable storage
     // -------------------------------------------------------------------------
@@ -39,12 +40,12 @@ abstract contract Setup is CurtaSolution(1, 10) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy and label the puzzle contract.
-        puzzle = IPuzzle(new Chess());
-        vm.label(address(puzzle), string.concat("Puzzle #10: ", puzzle.name()));
+        // Deploy or load and label the puzzle contract.
+        puzzle = IPuzzle(new NumberHeist());
+        vm.label(address(puzzle), "Puzzle #9: NumberHeist");
 
         // Add puzzle to Curta as `mockAuthor`.
         vm.prank(mockAuthor);
-        curta.addPuzzle(puzzle, 10);
+        curta.addPuzzle(puzzle, 9);
     }
 }

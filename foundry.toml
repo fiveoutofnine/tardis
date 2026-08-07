@@ -4,6 +4,16 @@ out = "out"
 libs = ["lib"]
 solc = "0.8.26"
 remappings = ["forge-std/=lib/forge-std/src/", "curta/=lib/curta/src/"]
+skip = [
+    "src/curta/base/3/LatentRisk.sol",
+    "src/curta/base/4/PairAssetManager.sol",
+    "src/curta/base/5/ZSafe.sol",
+    "src/curta/base/6/Fraud.sol",
+    "src/curta/base/7/CurtaLending.sol",
+    "src/curta/eth/15/BillyTheBull.sol",
+    "src/curta/eth/18/PhilosophersStone.sol",
+    "src/curta/eth/22/StakeFrens.sol",
+]
 
 [fmt]
 line_length = 100
