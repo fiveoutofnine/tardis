@@ -3,6 +3,9 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
+import {Deployer} from "src/curta/base/3/Challenge.sol";
+import {Puzzle} from "src/curta/base/3/Curta.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
 abstract contract Setup is CurtaSolution(8453, 3) {
@@ -38,8 +41,12 @@ abstract contract Setup is CurtaSolution(8453, 3) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy or load and label the puzzle contract.
-        puzzle = IPuzzle(0x9Ab56E9E5F38d66ff2440D87679A2F90eCB5cF37);
+        // Install the stateless deployer at the address hardcoded by the challenge.
+        Deployer deployer = new Deployer();
+        vm.etch(0x8555a99DC962D3711101896a3f432d65E8Fbb60f, address(deployer).code);
+
+        // Deploy and label the puzzle contract.
+        puzzle = IPuzzle(address(new Puzzle()));
         vm.label(address(puzzle), "Puzzle #3: LatentRisk");
 
         // Add puzzle to Curta as `mockAuthor`.

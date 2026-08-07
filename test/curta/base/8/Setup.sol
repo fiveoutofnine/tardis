@@ -3,6 +3,11 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
+import {ChallengeApp} from "src/curta/base/8/ChallengeApp.sol";
+import {RollApp} from "src/curta/base/8/RollApp.sol";
+import {Sequencer} from "src/curta/base/8/Sequencer.sol";
+import {StateStorage} from "src/curta/base/8/StateStorage.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
 abstract contract Setup is CurtaSolution(8453, 8) {
@@ -38,8 +43,15 @@ abstract contract Setup is CurtaSolution(8453, 8) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy or load and label the puzzle contract.
-        puzzle = IPuzzle(0x433223B5d926557A067BaA24dfE21F27C6F9FE55);
+        // Deploy the sequencing system used by the puzzle.
+        StateStorage stateStorage = new StateStorage();
+        Sequencer sequencer = new Sequencer(address(stateStorage));
+        RollApp rollApp = new RollApp(0x400, address(stateStorage), address(sequencer));
+        stateStorage.initialize(address(rollApp), address(sequencer));
+        sequencer.setRollApp(address(rollApp));
+
+        // Deploy and label the puzzle contract.
+        puzzle = IPuzzle(address(new ChallengeApp(address(stateStorage), address(rollApp))));
         vm.label(address(puzzle), "Puzzle #8: RollApp Sequencer Challenge");
 
         // Add puzzle to Curta as `mockAuthor`.

@@ -3,6 +3,8 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
+import {FailedLendingMarket} from "src/curta/base/7/Curta.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
 abstract contract Setup is CurtaSolution(8453, 7) {
@@ -38,8 +40,8 @@ abstract contract Setup is CurtaSolution(8453, 7) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy or load and label the puzzle contract.
-        puzzle = IPuzzle(0xc0894A610f48dc195FEbb409b55497b670D448d0);
+        // Deploy and label the puzzle contract.
+        puzzle = IPuzzle(address(new FailedLendingMarket()));
         vm.label(address(puzzle), "Puzzle #7: CurtaLending");
 
         // Add puzzle to Curta as `mockAuthor`.

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.24;
 
-import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
+import "curta/interfaces/IPuzzle.sol";
 
 /**
  * @title RollApp Sequencer Challenge

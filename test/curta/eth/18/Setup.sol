@@ -3,6 +3,8 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
+import {PhilosophersStone} from "src/curta/eth/18/PhilosophersStone.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
 abstract contract Setup is CurtaSolution(1, 18) {
@@ -38,8 +40,8 @@ abstract contract Setup is CurtaSolution(1, 18) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy or load and label the puzzle contract.
-        puzzle = IPuzzle(0x00000000001a9C5723d08a79907288d556d37a95);
+        // Deploy and label the puzzle contract.
+        puzzle = IPuzzle(address(new PhilosophersStone()));
         vm.label(address(puzzle), unicode"Puzzle #18: ♄ 🝡🝟 ☉");
 
         // Add puzzle to Curta as `mockAuthor`.

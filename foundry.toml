@@ -3,16 +3,17 @@ src = "src"
 out = "out"
 libs = ["lib"]
 solc = "0.8.26"
-remappings = ["forge-std/=lib/forge-std/src/", "curta/=lib/curta/src/"]
-skip = [
-    "src/curta/base/3/LatentRisk.sol",
-    "src/curta/base/4/PairAssetManager.sol",
-    "src/curta/base/5/ZSafe.sol",
-    "src/curta/base/6/Fraud.sol",
-    "src/curta/base/7/CurtaLending.sol",
-    "src/curta/eth/15/BillyTheBull.sol",
-    "src/curta/eth/18/PhilosophersStone.sol",
-    "src/curta/eth/22/StakeFrens.sol",
+remappings = [
+    "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@solmate/=lib/curta/lib/solmate/src/",
+    "curta/=lib/curta/src/",
+    "forge-std/=lib/forge-std/src/",
+    "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+    "relic-sdk/=lib/relic-sdk/",
+    "solady/=lib/curta/lib/solady/src/",
+    "solmate/=lib/curta/lib/solmate/src/",
 ]
 
 [fmt]

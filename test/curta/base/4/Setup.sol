@@ -3,6 +3,9 @@ pragma solidity ^0.8.26;
 
 import {IPuzzle} from "curta/interfaces/IPuzzle.sol";
 
+import {Deployer} from "src/curta/base/4/Challenge.sol";
+import {Puzzle} from "src/curta/base/4/Curta.sol";
+
 import {CurtaSolution} from "test/utils/CurtaSolution.sol";
 
 abstract contract Setup is CurtaSolution(8453, 4) {
@@ -38,8 +41,12 @@ abstract contract Setup is CurtaSolution(8453, 4) {
     function setUp() public virtual override {
         super.setUp();
 
-        // Deploy or load and label the puzzle contract.
-        puzzle = IPuzzle(0x8DC974f96Da26B4703e4f0E363Cbeaa6a8869A79);
+        // Install the stateless deployer at the address hardcoded by the challenge.
+        Deployer deployer = new Deployer();
+        vm.etch(0x1D1f5f03feDD0358e7eB8A980870ef6695834bB9, address(deployer).code);
+
+        // Deploy and label the puzzle contract.
+        puzzle = IPuzzle(address(new Puzzle()));
         vm.label(address(puzzle), "Puzzle #4: PairAssetManager");
 
         // Add puzzle to Curta as `mockAuthor`.
