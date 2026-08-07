@@ -3,7 +3,18 @@ src = "src"
 out = "out"
 libs = ["lib"]
 solc = "0.8.26"
-remappings = ["forge-std/=lib/forge-std/src/", "curta/=lib/curta/src/"]
+remappings = [
+    "@openzeppelin-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@solmate/=lib/curta/lib/solmate/src/",
+    "curta/=lib/curta/src/",
+    "forge-std/=lib/forge-std/src/",
+    "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+    "relic-sdk/=lib/relic-sdk/",
+    "solady/=lib/curta/lib/solady/src/",
+    "solmate/=lib/curta/lib/solmate/src/",
+]
 
 [fmt]
 line_length = 100

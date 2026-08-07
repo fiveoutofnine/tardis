@@ -1,0 +1,137 @@
+///                  ╦  ╔═╗╔╗ ╦ ╦╦═╗╦╔╗╔╔╦╗╦ ╦
+///                  ║  ╠═╣╠╩╗╚╦╝╠╦╝║║║║ ║ ╠═╣
+///                  ╩═╝╩ ╩╚═╝ ╩ ╩╚═╩╝╚╝ ╩ ╩ ╩
+/// ██████████████████████████████████████████████████████████████
+/// "The labyrinth is a living symbol in our world, in our cult ██
+/// █████████████████████████████████████████████████████████ u ██
+/// ██   the meandering journey of our life path, of pilgr ██ r ██
+/// ██ f ███████████████████████████████████████████████ i ██ e ██
+/// ██ o ██                                           ██ m ██ , ██
+/// ██   ██   █████████████████████████████████████   ██ a ██   ██
+/// ██ , ██   ██                                 ██   ██ g ██ a ██
+/// ██ h ██   ██   ███████████████████████████   ██   ██ e ██ n ██
+/// ██ t ██   ██   ██                       ██   ██   ██ , ██ d ██
+/// ██ r ██   ██   ██   █████████████████   ██   ██   ██   ██   ██
+/// ██ i ██   ██   ██   ██             ██   ██   ██   ██ o ██ i ██
+/// ██ b ██   ██   ██   ██   ███████   ██   ██   ██   ██ f ██ n ██
+/// ██   ██   ██   ██   ██   ██   ██   ██   ██   ██   ██   ██   ██
+/// ██ f ██   ██   ██   ██   ██        ██   ██   ██   ██ t ██ o ██
+/// ██ o ██   ██   ██   ██   ████████████   ██   ██   ██ r ██ u ██
+/// ██   ██   ██   ██   ██                  ██   ██   ██ a ██ r ██
+/// ██ , ██   ██   ██   ██████████████████████   ██   ██ n ██   ██
+/// ██ e ██   ██   ██                            ██   ██ s ██ m ██
+/// ██ g ██   ██   ████████████████████████████████   ██ f ██ i ██
+/// ██ a ██   ██                                      ██ o ██ n ██
+/// ██ i ██   ██████████████████████████████████████████ r ██ d ██
+/// ██ r ██           nreK nnamreH - ".emit fo dna ,noitam ██ s ██
+/// ██ r ████████████████████████████████████████████████████ . ██
+/// ██ am fo ,somsoc eht fo ,htaed dna efil fo lobmys a si tI   ██
+/// ██████████████████████████████████████████████████████████████
+
+/// @title Labyrinth
+/// @author https://github.com/kadenzipfel
+/// @dev lost?
+
+/// @notice Returns the puzzle's name.
+#define function name() view returns (string memory)
+/// @notice Generates the puzzle's starting position based on a seed.
+#define function generate(address _seed) view returns (uint256)
+/// @notice Verifies that a solution is valid for the puzzle.
+#define function verify(uint256 _start, uint256 _solution) nonpayable returns (bool)
+
+/// name()
+#define macro NAME() = takes (0) returns (0) {
+    0x20 push0 mstore
+    0x4c61627972696e7468
+    0x29 mstore
+    0x09 0x20 mstore
+    0x60 push0 return
+}
+
+/// generate(address _seed)
+#define macro GENERATE() = takes (0) returns (0) {
+    0x04 calldataload
+    push0 mstore
+    number 0x20 mstore
+    0x40 push0 sha3
+    push0 mstore
+    0x20 push0 return
+}
+
+/// verify(uint256 _start, uint256 _solution)
+#define macro VERIFY() = takes (0) returns (0) {
+    0x04 calldataload
+    0x24 calldataload
+    push0 push0
+    a jump
+
+    /// Lost in the  annals of time, an enigmatic  labyrinth   waits, its character as  mutable as the
+    /// river's  course. Among its winding passages,  a rhythm beats, like  the steady  tick-tock of a
+    /// grand cosmic clock. Beneath the  labyrinth's complex facade, choices  become consequences, and
+    /// barriers  become opportunities. Yet, deep  within its belly, a treasure lies, protected by the
+    /// formidable Minotaur. Rules  in this mystical realm,  they  whisper, are a dance  of duality, a
+    /// journey into the twilight zone of decision-making. Into this realm of twos, you must step with
+    /// wisdom  and courage. Navigate wisely, for every choice,  every twist  and turn could bring you
+    /// closer to the heart of the  labyrinth. Triumph awaits those who can   decipher the labyrinth's
+    /// song and dance to its  cryptic tune.  Herein lies the ultimate challenge, only the cunning and
+    /// the                brave                  will                emerge               victorious.
+    f3: 0x01  p1  jump  /******/  /******/  o:    y1  jumpi u1  /******/  jump w2:  /******/  /******/
+    dup1   b  jump o2:  /******/  /******/  push0 q1  jump  w:  /******/  j  jumpi  /******/  /******/
+    s2  jump    a1:     /******/  /******/   addmod   i1  jump  /******/  v1:    j  /******/  /******/
+
+    /******/  jumpi h2  /******/  jump  i:  0x02  b2  /******/  jump  n:  /******/  mstore g  jump x1:
+    /******/  dup1  p2  /******/  jump b1:  dup3  o1  /******/  jump p1:  /******/  push0  n  jump  y:
+    /******/  add   e1  /******/  jump u2:  swap2 s1  /******/  jump e1:  /******/  swap1 g2  jump q1:
+
+     return   f1: 0x01  /******/  m2  jump  /******/  n1: 0x10  /******/  v2  jump  /******/  /******/
+    e2: dup4  b3  jump  /******/    r1:     /******/  swap4 d3  /******/  jump b2:  /******/  /******/
+    eq    a2  jump m2:  /******/  add   m1  /******/  jump p2:  /******/  0x01  z2  /******/  /******/
+
+    /******/  jump  b:  0x03  h1  /******/  jump m1:  /******/  swap2 k2  jump e3:  /******/  /******/
+    /******/   return   v2: dup4  /******/  c3  jump  /******/  d1:  mul  t   jump  /******/  /******/
+    /******/  o1: 0xff  d   jump  /******/  w1: lt h  /******/  jump g1:  dup4  c1  /******/  /******/
+
+    jump t1:  /******/  and   m   jump  j:  /******/  /******/  0x20   s  jump j1:  /******/  q  jumpi
+    x1  jump  /******/  t:shr k   jump h1:  /******/  /******/  eq    l1  jump u1:  /******/  dup1   i
+    jump k2:  /******/  n2 jump   s1:   n2  /******/  /******/  jump c3:  mod    u  /******/  jump  z:
+
+    /******/  sub   u2  jump i2:  /******/  and   r   jump y2:  /******/  swap1 r2  /******/  /******/
+    /******/  jump q2:  dup2  d2  /******/  jump x2:  swap2 g3  /******/  jump d3:  /******/  /******/
+    /******/  lt     l  jump  e:  /******/  add   v   jump z1:  /******/  f3 jumpi  /******/  /******/
+
+    /******/  y2  jump  /******/  r:     j  /******/  jumpi b1  /******/  jump  d:  /******/  eq    z1
+    /******/  jump  u:  /******/   iszero   /******/  v1  jump  /******/  b3:  shr  /******/  c   jump
+    /******/    k1:     /******/   iszero   /******/  j1  jump  /******/  g:  0x20  /******/  o2  jump
+
+    /******/  q:  0x10  q2  jump  /******/  g2:  pop  /******/  j2 jump  /******/      i1:    /******/
+    /******/  iszero w  jump c1:  /******/  0x01  a1  /******/  jump f:  /******/   0x02  d1  /******/
+    /******/  jump  v:  dup1  t2  /******/  jump g3:  /******/  0x10  e  /******/   jump  l:  /******/
+
+    j  jumpi  /******/  l2  jump    f2:     /******/  swap2  p  /******/  jump a2:  /******/  /******/
+    n1 jumpi  /******/  w2  jump  a3: dup1  /******/  r1  jump  /******/  t2: 0xff  /******/  /******/
+    w1  jump  /******/  a:  dup3  c2  jump  /******/  j2:    a  /******/  jump  x:  /******/  /******/
+
+    0x01   z  jump y1:  /******/  0x10  g1  jump r2:  0x01   y  /******/  jump  c:  /******/  /******/
+    0x01  i2  jump z2:  /******/  eq     o  jump  m:  dup1  k1  /******/  jump  h:  /******/  /******/
+    j  jumpi  f2  jump  /******/     h2:    swap2  x  jump n2:  /******/  dup5  e2  /******/  /******/
+
+    /******/  /******/  /******/  /******/  /******/  jump  k:  0x03  t1  jump l2:  n2  jump  c2: dup2
+    /******/  /******/  /******/  /******/  /******/  f   jump  p:    n2  jump  s:  push0 e3  jump d2:
+    /******/  /******/  /******/  /******/  /******/  sub   a3  jump s2:  swap2 f1  jump l1:  x2 jumpi
+}
+
+#define macro MAIN() = takes (0) returns (0) {
+    push0 calldataload 0xe0 shr
+    dup1 0x06fdde03 eq name jumpi
+    dup1 0x2fa61cd8 eq generate jumpi
+    dup1 0x41161b10 eq verify jumpi
+
+    push0 push0 revert
+
+    name:
+        NAME()
+    generate:
+        GENERATE()
+    verify:
+        VERIFY()
+}

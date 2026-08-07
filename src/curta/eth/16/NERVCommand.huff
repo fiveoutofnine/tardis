@@ -1,0 +1,399 @@
+/**
+
+                        ███╗░░██╗███████╗██████╗░██╗░░░██╗  ██╗░░██╗░██████╗░
+                        ████╗░██║██╔════╝██╔══██╗██║░░░██║  ██║░░██║██╔═══██╗
+                        ██╔██╗██║█████╗░░██████╔╝╚██╗░██╔╝  ███████║██║██╗██║
+                        ██║╚████║██╔══╝░░██╔══██╗░╚████╔╝░  ██╔══██║╚██████╔╝
+                        ██║░╚███║███████╗██║░░██║░░╚██╔╝░░  ██║░░██║░╚═██╔═╝░
+                        ╚═╝░░╚══╝╚══════╝╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░╚═╝░░░╚═╝░░
+                          God's in His heaven, all's right with the world
+
+  ┌─┬────────────────────────────────────────────────────────────────────────────────────────┬─┐
+  │ ├────────────────────────────────────────────────────────────────────────────────────────┤ │
+  │ │                    //  S  //  S  //================\\  S  \\  S  \                     │ │
+  │ │                   //  S  //  S  //                  \\  S  \\  S \\                    │ │
+  │ │    ┌────────────────────────────┐                 ┌────────────────────────────┐       │ │
+  │ │    │DANANG TYPE-8 DEFENSE SCREEN│    ___          │TIME TO COLLAPSE :  223.229 │       │ │
+  │ │    └────────────────────────────┘   \   \         └────────────────────────────┘       │ │
+  │ │               //  S  //  S  //       \ X \              \\  S  \\  S \\                │ │
+  │ │              //  S  //  S  //         \ X \_________     \\  S  \\  S \\               │ │
+  │ │             //  S  //  S  //           \   CELEBRUM/      \\  S  \\  S \\              │ │
+  │ │            //  S  //  S  //            /01 _______/        \\  S  \\  S \\             │ │
+  │ │            \\  S  \\  S  \\           / M /                //  S  //  S //             │ │
+  │ │             \\  S  \\  S  \\         / A /                //  S  //  S //              │ │
+  │ │              \\  S  \\  S  \\       / G /                //  S  //  S //               │ │
+  │ │               \\  S  \\  S  \\     /_I_/                //  S  //  S //                │ │
+  │ │    ┌────────────────────────────┐                  ┌────────────────────────────┐      │ │
+  │ │    │PROTECT NO. 666 ON MAGI-01  │                  │TIME SINCE/SCREEN RAISED 009│      │ │
+  │ │    └────────────────────────────┘                  └────────────────────────────┘      │ │
+  │ │                   \\  S  \\  S  \\                  //  S  //  S //                    │ │
+  │ │                    \\  S  \\  S  \\================//  S  //  S //                     │ │
+  │ ├────────────────────────────────────────────────────────────────────────────────────────┤ │
+  └─┴────────────────────────────────────────────────────────────────────────────────────────┴─
+
+      ================================EVANGELION-ERROR-CODES==============================
+     XX                                                                                  XX
+     XX                    0001 - Evangelion synchronization failed                      XX
+     XX                    0002 - Wave 1 - Invalid Evangelion response                   XX
+     XX                    0003 - Super Solenoid Engine failure                          XX
+     XX                    0004 - AT Field Fragmentation                                 XX
+     XX                    0005 - Soul Sync Out of Bounds                                XX
+     XX                    0006 - Zero-Time Disruption                                   XX
+     XX                    0007 - Alpha Z881                                             XX
+     XX                    0008 - Elohim DNA mismatch                                    XX
+     XX                    0009 - Fracked Inner Core                                     XX
+     XX                    0010 - Soul Pattern Unknown                                   XX
+     XX                    0011 - Angelic Code Injection                                 XX
+     XX                    0012 - Instrumentation Query Malfunction                      XX
+     XX                    0013 - Quantum Energy Flux                                    XX
+     XX                    0014 - LCL Anomaly Detected                                   XX
+     XX                    0015 - Soul Sync Cascade Failure                              XX
+     XX                    0016 - Eva Unit Energy Flux                                   XX
+     XX                                                                                  XX
+      ===================================================================================
+*/
+
+                           #define function eva_SEVEN() nonpayable returns ()
+                           #define function eva_EIGHT() nonpayable returns ()
+                           #define function eva_NINE() nonpayable returns ()
+                           #define function eva_TEN() nonpayable returns ()
+                           #define constant DIFFICULTY_LEVEL_HARD = 0x1
+                           #define constant DIFFICULTY_LEVEL_INSANE = 0x2
+                           #define constant DIFFICULTY_LEVEL_IMPOSSIBLE = 0x3
+                           #define constant LIVE_MODE_ACTIVATED = 0x18
+                           #define constant CD_EVA_CONTROL_ADDRESS = 0x0
+                           #define constant SIMULATOR_SETTING = 0xa0
+                           #define constant MAX_GAS_FOR_EVA = 0x30d40
+                           #define macro MAIN() = takes (0) returns (0) {
+
+                           //╱╱╱╱ ╱╱ ╱╱ ╱╱╱ ╱╱╱╱ ╱╱╱╱╱╱╱ ╱╱╱╱╱╱╱ ╱╱ ╱╱╱╱╱
+                           //╱╱╱ ╱ ╱╱ ╱╱╱ ╱ ╱ ╱ ╱╱╭╮╱╱/╱╱ ╱╱╱╭╮╱╱╱╱╱╭╮ ╱╱
+                           //╱╱╱╱╱ ╱╱ ╱ ╱╱╱ ╱╱ ╱╱╱┃┃╱╱╱╱╱╱╱╱╭╯╰╮╱╱╱╱┃┃ ╱╱
+                           //╱╭━━┳━━┳╮╭┳╮╭┳━━┳━╮╭━╯┃╭━━┳━━┳━╋╮╭╋━┳━━┫┃ ╱╱
+                           //╱┃╭━┫╭╮┃╰╯┃╰╯┃╭╮┃╭╮┫╭╮┃┃╭━┫╭╮┃╭╮┫┃┃╭┫╭╮┃┃ ╱╱
+                           //╱┃╰━┫╰╯┃┃┃┃┃┃┃╭╮┃┃┃┃╰╯┃┃╰━┫╰╯┃┃┃┃╰┫┃┃╰╯┃╰╮╱╱
+                           // ╰━━┻━━┻┻┻┻┻┻┻╯╰┻╯╰┻━━╯╰━━┻━━┻╯╰┻━┻╯╰━━┻━╯
+
+
+
+                                /** *************************** */
+                                /** **   !!!START HERE!!!    ** */
+                                /** *************************** */
+
+                                /** 5F Push Zero to Initiate Attack
+                                                 |
+                                               \ | /
+                                                \*/
+                                               0x00
+
+                                         /** がんばって！*/
+
+                                              WAVE1()
+
+                                         /** ファイト！*/
+
+                                              WAVE2()
+
+
+                                             // | \\
+
+
+                                              // \\
+
+    /**              WAVE's 1 and 2 are complete. The Elohim appears to be down...
+    .
+    ..
+    ...
+    ....
+    ..............................................................................................
+            ==> HARD and INSANE mode skip this part and proceed directly to fin: <==
+
+                                    ███████╗██╗  ██╗██╗██████╗
+                                    ██╔════╝██║ ██╔╝██║██╔══██╗
+                                    ███████╗█████╔╝ ██║██████╔╝
+                                    ╚════██║██╔═██╗ ██║██╔═══╝
+                                    ███████║██║  ██╗██║██║
+                                    ╚══════╝╚═╝  ╚═╝╚═╝╚═╝
+            ==> HARD and INSANE mode skip this part and proceed directly to fin: <==
+    ..............................................................................................
+    */
+    [SIMULATOR_SETTING] calldataload [DIFFICULTY_LEVEL_HARD] eq
+    [SIMULATOR_SETTING] calldataload [DIFFICULTY_LEVEL_INSANE] eq or fin jumpi/**
+    ..............................................................................................
+    .....
+    ....
+    ...
+    ..
+    .
+
+    NERV Commmand: Come in pilot! Sensors indicating the Elohim is still showing signs of life...
+
+    We need you to finish it off with two final attack waves.  Go, go, go!
+
+    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */ ATTACK_WAVE1() ATTACK_WAVE2()
+
+    /*************************/
+    /**   LIVE MODE ONLY!!   *//** /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/// */
+    /**                      */ [SIMULATOR_SETTING] calldataload [LIVE_MODE_ACTIVATED]        // */
+    /** in simuluation mode  */ eq iszero fin jumpi                                           // */
+    /** skip this section    *//** /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/// */
+    /** and proceed to final */
+    /**                      *  ->->->->->->->->->->->->->->->->->->  * \ . | * . . . * | . / */
+    /**                      *  ->->->->->->->->->->->->->->->->->-> */    THE_FIFTH_IMPACT() // *
+    /*********************** *  ->->->->->->->->->->->->->->->->->->  * / ' | * . . . * | ' \ */
+
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\
+                                            ___
+                                            |__  | |\ |
+                                            |    | | \|
+
+        -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+    /** -/;.'/.`// \.*;'/+.`',.'-/';.&,;'.* \.;*-,.\ / ..,`*.&/';.&,;'.* \.;*-,.\ /;'.* \.;*-,.\ */
+
+                                                fin:
+                /** You made it through, pilot. Did you predict the correct DNA sequence? */
+
+                                0x20 mstore 0x00 mstore 0x40 0x00
+                                                return
+    }
+
+
+// ================================EVANGELION-OPERATIONAL-MANDATES=================+MAGI-01-ORIGINAL
+
+#define macro ZERO_TIME_SOUL_SYNC(errorcode) = takes (1) returns (0) {
+    no_fail jumpi
+    <errorcode> 0x00 mstore 0x20 0x00 revert
+    no_fail:
+}
+
+#define macro ALPHA_Z8881() = takes (0) returns (0) {
+    returndatasize 0x20 eq all_good jumpi
+    0x7 0x00 mstore 0x20 0x00 revert
+    all_good:
+}
+
+#define macro ANALYZE_EVA_RESPONSE() = takes (1) returns (0) {
+    ZERO_TIME_SOUL_SYNC(0x01) ALPHA_Z8881()
+}
+
+
+// ================================EVANGELION-ATTACK-MANDATES=====================+MAGI-02-ORIGINAL
+
+#define macro WAVE1() = takes (0) returns (0) {
+    /**                                 INITIATE SYNCHRONIZED ATTACK WAVE 0x1 */ ATTACK_WAVE1() /**
+
+                     \\
+        -             \\                            .                                        ^
+                        \                                                      .           ^  ^
+  _          ===7===== / *)
+             ========= \ *)>>                                    ()
+     -                  /            \\                          |
+                      //               \\                   // ***\            \             ..
+       \\           //                   \          =======// * *  \\======         `
+         \\                   ===8===== /  \>     ///===\ //\\____//  ===\\\                    /
+           \            -     ========= \  />    |||     \|         |/    \\\     '     "
+=10====== / ()_                          /       |||      |  O---O  |      \\\___....
+========= \ ()          \\             //        |||      |    -    |       \\\///oo///=-=-=-     .
+           /              \\         //          X|X      |         |        XX|X===////''   o  `'
+         //                 \                   ()||\     |  O---O  |           ^^^^     _____***
+       //        =9======= / .)                 | /  \  //    /\    \\                  | o o o** .
+                 ========= \ .)                          \\    \ \    \\     ____      .| o o o |'
+                            /              o       ___    \\   \  \   ||    |o  o|  /|==| o o o |.
+  .            -          //                 _____| O |    || ||   \  ||    |o  o| /=|  | o o o |
+                        //                  |XXxO|  O |   /_____\  /_____\  |    |/  |  | o|| o |:
+                       */
+}
+
+#define macro WAVE2() = takes (0) returns (0) {
+    /** This is it pilot! We need to finish this angel off and take a second DNA sample.
+
+     The Elohim angels are reportedly capable of some unbelievable feats when they are
+     close to death. It's even rumored that they can alter their own DNA.
+
+     Watch your power levels and don't let your guard down! Good luck! */
+
+    ATTACK_WAVE2_FINISH_HIM() /** Wave 0x2 - Let's end this now pilot! Aerial attack formation!
+
+
+    .                        .          \         \      ||
+                                                         9|         |          /
+                                    ^               \\   ||   //        o             *
+                                                     \\  ||  //
+              ^                         \       z      \ || /        ||   .            /
+                                                        \/\/         10
+       ^    ^                                           ^^^^    \\   ||   //
+        ^   ^  ^                        \                00      \\  ||  //    ,
+           ^ ^                                   |      \__/       \ || /
+       ^                                                       .    \/\/
+                                                ||                  (XXX)    "
+                    .                           8|          |        \|/
+                                           \\   ||   //
+                                            \\  ||  //     ||     /       '
+                                              \ || /       7|
+                                               \/\/   \\   ||   //  .
+                                               (**)    \\  ||  //
+          ^                                      |       \ || /
+                            .                             \/\/                  .
+                                                          ()()
+                                                           \|
+     _______
+       (x )==O
+                                         \ | )_           ()               ___....
+               ______                      \\\             |              \'\///oo///=-=-=-*>*>*>
+             O==(x )                        \\        // *** \          ///XX|X===////''
+                                    ,        \\======//  o o \\====== //
+           _______                                =\ //\\__O_//  ===\\\        .
+         O==(x )                                   \|         |/
+                                               .    |  O---O  |  *  .
+                            .         /             |    - XxX|         -            "
+                                              **    | x       |  \'  * '
+                   _________                  .  *  |  O---O  |
+                  | o o o o |          ___^^^^_   //    /\    \\   * * * .
+       ____       | o o o o |___      |  O  O  |   \\    \ \    \\
+      |o  o|  /|==| o o o o | - |____ |  O  O  |    \\   \  \   ||  .   *   ,
+      |o  o| /=|  | o o o o | - | == ||  O  O  |     || ||   \  ||
+      |    |/  |  | o ||| o |   |  = ||  |^|^| |\   /_____\  /_____\ *  **  * * ** */
+}
+
+#define macro THE_FIFTH_IMPACT() = takes (1) returns (1) {
+    /** Good fighting so far, pilot!  Congrats on taking out the scout Elohim.
+        But now it's too late. An advance batallion of 100 Elohim has just landed!
+        We don't have the genetic weapon ready yet so you'll have to engage these enemies,
+        there is no other alternative.  Can you defeat all of these foes? */
+
+                                                         //(f*zzz
+                                                        //
+                                                       //
+                                 //*************************\\
+                                 /**      \         /      **/
+                                 /**     0           0     **/
+    ATTACK_WAVE1() ATTACK_WAVE2()                           ATTACK_WAVE2() ATTACK_WAVE1()
+    ATTACK_WAVE1() ATTACK_WAVE2()/** \\________________// */ ATTACK_WAVE2() ATTACK_WAVE1()
+    ATTACK_WAVE2() ATTACK_WAVE1() ATTACK_WAVE1() ATTACK_WAVE2() ATTACK_WAVE1() ATTACK_WAVE1()
+    ATTACK_WAVE2()                ATTACK_WAVE1() ATTACK_WAVE2()               ATTACK_WAVE2()
+    ATTACK_WAVE1()                ATTACK_WAVE1() ATTACK_WAVE2()                  ATTACK_WAVE2()
+    ATTACK_WAVE1()                ATTACK_WAVE2() ATTACK_WAVE1()                   ATTACK_WAVE1()
+    ATTACK_WAVE2()                ATTACK_WAVE1() ATTACK_WAVE1()                   ATTACK_WAVE2()
+    ATTACK_WAVE1()                ATTACK_WAVE2() ATTACK_WAVE2()                   ATTACK_WAVE1()
+    ATTACK_WAVE1()                ATTACK_WAVE2() ATTACK_WAVE2()                    ATTACK_WAVE1()
+    ATTACK_WAVE2()                ATTACK_WAVE1() ATTACK_WAVE1()                     ATTACK_WAVE2() ATTACK_WAVE1() ATTACK_WAVE1() ATTACK_WAVE2()
+      ATTACK_WAVE1()              ATTACK_WAVE2()  ATTACK_WAVE2()                         ATTACK_WAVE1() ATTACK_WAVE1() ATTACK_WAVE2()
+                                  ATTACK_WAVE2()  ATTACK_WAVE1()
+                                  ATTACK_WAVE2()   ATTACK_WAVE1()
+                                 ATTACK_WAVE1()     ATTACK_WAVE2()
+                                ATTACK_WAVE1()       ATTACK_WAVE1()
+                                ATTACK_WAVE2()        ATTACK_WAVE1()
+                                ATTACK_WAVE2()         ATTACK_WAVE2()
+                                ATTACK_WAVE1()       ATTACK_WAVE1()
+                              ATTACK_WAVE2()          ATTACK_WAVE2()
+                              ATTACK_WAVE1()           ATTACK_WAVE2()
+                              ATTACK_WAVE1()            ATTACK_WAVE1()
+                              ATTACK_WAVE2()            ATTACK_WAVE1()
+                              ATTACK_WAVE1()             ATTACK_WAVE2()
+                          ATTACK_WAVE1()                ATTACK_WAVE2()
+                          ATTACK_WAVE2()                ATTACK_WAVE1()
+                          ATTACK_WAVE1()                ATTACK_WAVE2()
+            ATTACK_WAVE2() ATTACK_WAVE1()               ATTACK_WAVE2() ATTACK_WAVE1()
+            ATTACK_WAVE1() ATTACK_WAVE2()               ATTACK_WAVE1() ATTACK_WAVE1()
+            ATTACK_WAVE2() ATTACK_WAVE1()               ATTACK_WAVE2() ATTACK_WAVE2()
+ /** ** * */ATTACK_WAVE1() ATTACK_WAVE1()               ATTACK_WAVE2() ATTACK_WAVE2() /** * * *    ***   * * **** ** ** *** *** * ** ** *** **  */
+ /**  * * *** * * ** ** *** ***** * * *** ****** * * ** * * * ****** **** * * ** ** ******* ****    ** *** *** *** ** * * ** * ***** ** *** * * */
+ /* * * * *** * * **** * * *** ****** * * ** * * * ****** **** * * ** ** ******* ****  **** ** * ** ** *** *** *** ** * * ** * * ** *** * * *** */
+ /** **b*zzz ** * * *** * * * ** *** ***** * * ** ** *** *** *** ** * * ** * ************* * *** * ** ** * *****  ** *** * * ** ** ** ** *** *  */
+}
+
+
+
+// // ================================EVANGELION-ATTACK-UTILITIES=================+MAGI-03-ORIGINAL
+
+#define fn ATTACK_WAVE1() = takes (1) returns (1) {
+    0x07
+        EVA_SEVEN()
+            EVA_EIGHT()
+        EVA_NINE()
+            EVA_TEN()
+    pop
+}
+
+#define macro EVA_SEVEN() = takes (2) returns (2) {
+    __FUNC_SIG(eva_SEVEN) 0x00 mstore CONFIRM_EVA_CONTRACT()
+}
+
+#define macro EVA_EIGHT() = takes (2) returns (2) {
+    __FUNC_SIG(eva_EIGHT) 0x00 mstore CONFIRM_EVA_CONTRACT()
+}
+
+#define macro EVA_NINE() = takes (2) returns (2) {
+    __FUNC_SIG(eva_NINE) 0x00 mstore CONFIRM_EVA_CONTRACT()
+}
+
+#define macro EVA_TEN() = takes (2) returns (1) {
+    __FUNC_SIG(eva_TEN) 0x00 mstore CONFIRM_EVA_CONTRACT()
+}
+
+#define macro ATTACK_WAVE2() = takes (1) returns (1) {
+    __FUNC_SIG(eva_SEVEN) 0x00 mstore CALL_EVA_CONTRACT()
+    __FUNC_SIG(eva_EIGHT) 0x00 mstore CALL_EVA_CONTRACT()
+    __FUNC_SIG(eva_NINE)  0x00 mstore CALL_EVA_CONTRACT()
+    __FUNC_SIG(eva_TEN)   0x00 mstore CALL_EVA_CONTRACT()
+
+    // Angel neural resequencing
+    add add add
+    0x07 0x20 calldataload exp
+    0x08 0x40 calldataload exp
+    0x09 0x60 calldataload exp
+    0x10 0x80 calldataload exp
+    add add add
+
+    dup1 swap2 eq ZERO_TIME_SOUL_SYNC(0x18)
+    swap1 add
+}
+
+// Same as ATTACK_WAVE2 but this one includes a S2 Engine gas check
+#define macro ATTACK_WAVE2_FINISH_HIM() = takes (1) returns (2) {
+
+    gas
+    __FUNC_SIG(eva_SEVEN) 0x00 mstore CALL_EVA_CONTRACT()
+    __FUNC_SIG(eva_EIGHT) 0x00 mstore CALL_EVA_CONTRACT() add
+    __FUNC_SIG(eva_NINE)  0x00 mstore CALL_EVA_CONTRACT() add
+    __FUNC_SIG(eva_TEN)   0x00 mstore CALL_EVA_CONTRACT() add
+    gas
+
+    // Angel neural resequencing
+    0x07 0x20 calldataload exp
+    0x08 0x40 calldataload exp add
+    0x09 0x60 calldataload exp add
+    0x10 0x80 calldataload exp add
+
+    dup1 swap3 eq ZERO_TIME_SOUL_SYNC(0x8)
+
+    // Super Solenoid power level evaluation
+    swap3 add swap2 swap1 sub swap1
+}
+
+#define macro CALL_EVA_CONTRACT() = takes (0) returns (1) {
+    gas [MAX_GAS_FOR_EVA] lt
+    ZERO_TIME_SOUL_SYNC(0x03)
+
+    0x00 0x20 0x04 0x1c [CD_EVA_CONTROL_ADDRESS] calldataload [MAX_GAS_FOR_EVA] staticcall
+    ANALYZE_EVA_RESPONSE()
+    returndatasize 0x0 0x20 returndatacopy 0x20 mload
+}
+
+#define fn CONFIRM_EVA_CONTRACT() = takes (2) returns (2) {
+    swap1
+    CALL_EVA_CONTRACT()
+
+    0x06 dup4 sub 0x20 mul calldataload dup4 swap1 exp dup2 eq
+    ZERO_TIME_SOUL_SYNC(0x02)
+    add swap1 0x01 add
+}
